@@ -1,0 +1,40 @@
+Hashing is a technique used in data structures that efficiently stores and retrieves data in a way that allows for quick access.
+
+Hashing involves mapping data to a specific index in a hash table (an array of items) using a hash function. It enables fast retrieval of information based on its key.
+The great thing about hashing is, we can achieve all three operations (search, insert and delete) in O(1) time on average.
+Hashing is mainly used to implement a set of distinct items (only keys) and dictionaries (key value pairs).
+
+
+// Java program to check if the given arrays are disjoint
+// using two nested loops
+
+import java.util.*;
+
+class hft {
+    static boolean areDisjoint(int[] a, int[] b) {
+        
+        // Take every element of array a 
+      	// and search it in array b
+        for(int i = 0; i < a.length; i++) {
+            for(int j = 0; j < b.length; j++) {
+                
+                // If any common element is found
+                // given arrays are not disjoint
+                if(a[i] == b[j])
+                    return false;
+            }
+        }
+        
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {12, 34, 11, 9, 3};
+        int[] b = {7, 2, 1, 5};
+        
+        if(areDisjoint(a, b))
+            System.out.println("True");
+        else
+            System.out.println("False");
+    }
+}
